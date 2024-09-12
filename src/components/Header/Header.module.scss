@@ -1,0 +1,37 @@
+.container {
+  box-shadow: 0px 0px 8px 0px #00000080;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 75px;
+  background: var(--layout-bg-color);
+}
+
+.slogan {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  margin-left: 60px;
+}
+
+.flag {
+  vertical-align: top;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 33px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  margin-left: auto;
+  margin-right: 28px;
+}
+
+.contacts > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
