@@ -1,3 +1,52 @@
 .btn {
-    border: 1px solid red;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  color: var(--white-main);
+  transition: transform 0.4s ease;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.btn:disabled {
+  background-color: var(--gray-main);
+}
+
+.primary {
+  background-color: var(--blue-primary);
+}
+
+.secondary {
+  background-color: var(--blue-secondary);
+}
+
+.outlined {
+  border-color: var(--blue-primary);
+  background-color: transparent;
+}
+
+.large {
+  border-radius: 55px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 31px;
+}
+
+.base {
+  border-radius: 55px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 22px 31px;
+}
+
+.small {
+  border-radius: 22px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 8px 21px;
 }

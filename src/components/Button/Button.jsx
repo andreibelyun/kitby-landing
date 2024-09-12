@@ -1,8 +1,9 @@
 import st from './Button.module.scss'
+import clsx from 'clsx'
 
-const Button = ({ children, ...props }) => {
+const Button = ({ variant = 'primary', size = 'base', children, className, ...props }) => {
   return (
-    <button className={st.btn} {...props}>
+    <button className={clsx(st.btn, st[variant], st[size], className)} {...props}>
       {children}
     </button>
   )
