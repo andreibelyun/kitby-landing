@@ -1,0 +1,67 @@
+.container {
+  background: var(--white-main);
+  border-radius: 20px;
+  position: relative;
+  top: -15px;
+  margin-bottom: -15px;
+  color: var(--black-main);
+  padding-top: 40px;
+  padding-bottom: 54px;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 15px;
+}
+
+.caption {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--blue-primary);
+}
+
+.main {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whyUsQuestion {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 25px;
+}
+
+.advantagesList {
+  list-style: none;
+  list-style-position: inside;
+  padding: 0 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 290px 1fr;
+  row-gap: 35px;
+  column-gap: 5%;
+}
+
+.advantage {
+  display: flex;
+  gap: 25px;
+}
+
+.advantage > svg {
+  flex-shrink: 0;
+}
+
+.btn {
+  margin-top: 50px;
+  width: 265px;
+}
