@@ -47,10 +47,6 @@ a {
   text-decoration: none;
 }
 
-.disabled-scroll {
-  overflow-y: hidden;
-}
-
 header,
 main > section,
 footer {
@@ -58,7 +54,11 @@ footer {
   margin: 0 auto;
   max-width: var(--max-width);
   padding: 0 var(--page-x-padding);
-  border: 1px solid green;
+  /* border: 1px solid green; */
+}
+
+main {
+  flex: 1 1 auto;
 }
 
 .page {
@@ -67,6 +67,57 @@ footer {
   flex-direction: column;
 }
 
-main {
-  flex: 1 1 auto;
+.page:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: url(../assets/backgrounds/main-bg.png) 0 0 repeat;
+  /* top: -50%; */
+  /* left: -50%; */
+  /* transform: rotate(90deg); */
+}
+
+.disabled-scroll {
+  overflow-y: hidden;
+}
+
+.swiper-slide {
+  /* height: auto !important; */
+  text-align: center;
+}
+
+.swiper-content {
+  height: auto !important;
+}
+
+.swiper-button-disabled {
+  opacity: 0.4 !important;
+  cursor: auto !important;
+}
+
+.swiper-button-disabled:hover {
+  transform: none !important;
+}
+
+.swiper-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+}
+
+.swiper-pagination-bullet {
+  width: 8px !important;
+  height: auto !important;
+  aspect-ratio: 1/1 !important;
+  opacity: 0.9 !important;
+  background-color: var(--white-main) !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 13px !important;
+  opacity: 1 !important;
+  background-color: var(--blue-primary) !important;
 }
