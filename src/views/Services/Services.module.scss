@@ -1,0 +1,107 @@
+.container {
+  padding: 0;
+  margin-top: 40px;
+  margin-bottom: 54px;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.slide {
+  width: 350px !important;
+  height: 356px !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  border-radius: 40px;
+  overflow: hidden;
+  background: var(--blue-primary);
+}
+
+.slideInner {
+  width: 100%;
+  height: 100%;
+  margin-top: auto;
+  display: flex;
+  align-items: end;
+  padding: 30px 23px;
+}
+
+.slideText {
+  font-weight: 700;
+  text-align: left;
+}
+
+.slideTextS {
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.slideTextM {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.slideTextL {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.additional {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.additionalTitle {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 25px;
+}
+
+.additionalList {
+  list-style: none;
+  list-style-position: inside;
+}
+
+.additionalItem {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.additionalItem:last-child {
+  margin-bottom: 0;
+}
+
+.additionalItemNum {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--blue-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.additionalItemText {
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
