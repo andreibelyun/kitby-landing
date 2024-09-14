@@ -1,12 +1,11 @@
-import Button from '@/components/Button/Button'
 import st from './WhyUs.module.scss'
-import { useModal } from '@/context/useModal'
 import Icon1 from './assets/Icon1'
 import Icon2 from './assets/Icon2'
 import Icon3 from './assets/Icon3'
 import Icon4 from './assets/Icon4'
 import Icon5 from './assets/Icon5'
 import Icon6 from './assets/Icon6'
+import ButtonsGroup from '@/components/ButtonsGroup/ButtonsGroup'
 
 const ADVANTAGES = [
   {
@@ -93,8 +92,6 @@ const ADVANTAGES = [
 ]
 
 const WhyUs = () => {
-  const { openModal } = useModal()
-
   return (
     <section className={st.container}>
       <h2 className={st.title}>Почему KITBY.by? </h2>
@@ -119,9 +116,7 @@ const WhyUs = () => {
           ))}
         </ul>
 
-        <Button className={st.btn} onClick={openModal}>
-          Оставить заявку
-        </Button>
+        <ButtonsGroup withoutLeaveFreeEstimateReqBtn />
       </div>
     </section>
   )

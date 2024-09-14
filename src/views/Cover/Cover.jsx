@@ -1,13 +1,10 @@
 'use client'
 
 import st from './Cover.module.scss'
-import Button from '@/components/Button/Button'
-import { useModal } from '@/context/useModal'
 import IconWhaleTail from '@/assets/svg/IconWhaleTail'
+import ButtonsGroup from '@/components/ButtonsGroup/ButtonsGroup'
 
 const Cover = () => {
-  const { openModal } = useModal()
-
   return (
     <section className={st.container}>
       <div className={st.decoration} />
@@ -41,14 +38,7 @@ const Cover = () => {
           </li>
         </ul>
 
-        <div className={st.buttons}>
-          <Button onClick={openModal} className={st.btn}>
-            Оставить заявку
-          </Button>
-          <Button variant='outlined' onClick={openModal} className={st.btn}>
-            Бесплатный просчет
-          </Button>
-        </div>
+        <ButtonsGroup />
       </div>
     </section>
   )
