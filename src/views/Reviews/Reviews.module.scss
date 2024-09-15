@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 35px;
+  width: 100%;
+  text-align: left;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.review {
+  background: var(--gray-main-50);
+  border-radius: 20px;
+  padding: 31px 44px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.reviewPhoto {
+  position: relative;
+  width: 147px;
+  height: auto;
+  aspect-ratio: 147/221;
+  background: var(--gray-main);
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.reviewAuthorName {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.reviewAuthorJob {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  padding-bottom: 20px;
+  color: #00000080;
+}
+
+.reviewText > p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  padding-bottom: 8px;
+}
+
+.reviewDate {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 35px;
+  color: #00000080;
+}

@@ -2,6 +2,8 @@ import st from './InterestingProducts.module.scss'
 import Image from 'next/image'
 import { PRODUCTS } from './productsList'
 import ButtonsGroup from '@/components/ButtonsGroup/ButtonsGroup'
+import Partners from '../Partners/Partners'
+import Reviews from '../Reviews/Reviews'
 
 const InterestingProducts = () => {
   return (
@@ -15,6 +17,9 @@ const InterestingProducts = () => {
       </div>
 
       <ButtonsGroup className={st.btns} withoutLeaveFreeEstimateReqBtn />
+
+      <Partners />
+      <Reviews />
     </section>
   )
 }
