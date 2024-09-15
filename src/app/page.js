@@ -6,6 +6,7 @@ import WhyUs from '@/views/WhyUs/WhyUs'
 import Services from '@/views/Services/Services'
 import Team from '@/views/Team/Team'
 import Advertising from '@/views/Advertising/Advertising'
+import InterestingProducts from '@/views/InterestingProducts/InterestingProducts'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Services />
       <Team />
       <Advertising />
+      <InterestingProducts />
     </ModalContextProvider>
   )
 }
