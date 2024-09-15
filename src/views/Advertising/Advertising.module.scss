@@ -1,0 +1,35 @@
+.container {
+  padding-top: 54px;
+  padding-bottom: 32px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./assets/delivery-box.png');
+  background-size: 47% 100%;
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
+  margin-left: 140px;
+  margin-right: 60px;
+  padding: 32px 0 50px;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 46px;
+  margin-bottom: 14px;
+  max-width: 480px;
+}
+
+.caption {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 380px;
+}
+
+.btns {
+  margin-top: 38px;
+}
