@@ -41,6 +41,25 @@
 
 .productText {
   width: 85%;
+
+  input {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  input:checked + .productInfo {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+  }
+
+  input:focus ~ .readMore {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  p:is(.truncated) + .readMore {
+    display: block;
+  }
 }
 
 .productName {
@@ -54,15 +73,19 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.showMore {
-  background: none;
-  border: none;
+.readMore {
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
   text-decoration: underline;
   color: var(--blue-primary);
   cursor: pointer;
+  display: none;
 }
