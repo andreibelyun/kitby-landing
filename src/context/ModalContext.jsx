@@ -5,7 +5,7 @@ import Modal from '@/components/Modal/Modal'
 
 export const ModalContext = createContext()
 
-const DEFAULT_TYPE = 'appointment'
+const DEFAULT_TYPE = 'simpleRequest'
 
 export const ModalContextProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)

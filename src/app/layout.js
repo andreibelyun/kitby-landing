@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer/Footer'
+import { ModalContextProvider } from '@/context/ModalContext'
 
 const inter = Inter({ subsets: ['cyrillic'], display: 'swap', variable: '--font-inter' })
 
@@ -15,11 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang='ru'>
       <body className={`${inter.className} ${inter.variable}`}>
-        <div className='page'>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <ModalContextProvider>
+          <div className='page'>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </ModalContextProvider>
       </body>
     </html>
   )

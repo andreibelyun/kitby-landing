@@ -5,11 +5,13 @@ import { useEffect, useRef } from 'react'
 import { useModal } from '@/context/useModal'
 import { disableScroll, enableScroll } from '@/utils/scroll'
 import { useKeyboardEvent } from '@/hooks/useKeyboardEvent'
+import LeaveSimpleRequest from './LeaveSimpleRequest/LeaveSimpleRequest'
+import LeaveFreeEstimateRequest from './LeaveFreeEstimateRequest/LeaveFreeEstimateRequest'
 
 const Modal = () => {
   const modalRef = useRef(null)
 
-  const { isOpen, type, data, closeModal } = useModal()
+  const { isOpen, type, closeModal } = useModal()
 
   const startClosingAnimation = () => {
     modalRef.current.className = modalRef.current.className + ' ' + st.hiddenOverlay
@@ -29,8 +31,8 @@ const Modal = () => {
   }
 
   const modalContentByType = {
-    // simpleRequest: <LeaveSimpleRequest closeModal={onModalClose} />,
-    // freeEstimateRequest: <LeaveFreeEstimateRequest closeModal={onModalClose} />,
+    simpleRequest: <LeaveSimpleRequest closeModal={onModalClose} />,
+    freeEstimateRequest: <LeaveFreeEstimateRequest closeModal={onModalClose} />
   }
 
   useKeyboardEvent('Escape', () => {
