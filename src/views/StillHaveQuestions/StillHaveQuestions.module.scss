@@ -1,0 +1,52 @@
+.container {
+  padding-top: 22px;
+  padding-bottom: 70px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./assets/phone-chat.png');
+  background-size: 24.2% 100%;
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
+  margin-left: 126px;
+  margin-right: 96px;
+  padding: 68px 0 46px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 42px;
+  margin-bottom: 35px;
+}
+
+.caption {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 380px;
+}
+
+.contactForm {
+  display: flex;
+  gap: 26px;
+}
+
+.input {
+  width: 420px;
+}
+
+.btn {
+  min-width: auto;
+  padding: 0;
+  width: 222px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
