@@ -12,6 +12,7 @@
 }
 
 .btn:disabled {
+  pointer-events: none;
   background-color: var(--gray-main);
 }
 
@@ -33,6 +34,8 @@
   font-weight: 700;
   font-size: 25px;
   line-height: 31px;
+  padding: 28px 100px;
+  min-width: 394px;
 }
 
 .base {
