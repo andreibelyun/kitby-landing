@@ -17,7 +17,6 @@ const Services = () => {
       <h2 className={st.title}>Услуги</h2>
 
       <Carousel
-        withAutoplay={false}
         withPagination
         id='services-slider'
         slides={SERVICES_LIST.map(info => (
