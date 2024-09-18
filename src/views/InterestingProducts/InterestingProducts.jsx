@@ -4,6 +4,7 @@ import { PRODUCTS } from './productsList'
 import ButtonsGroup from '@/components/ButtonsGroup/ButtonsGroup'
 import Partners from '../Partners/Partners'
 import Reviews from '../Reviews/Reviews'
+import { useEffect, useRef } from 'react'
 
 const InterestingProducts = () => {
   return (
@@ -26,16 +27,43 @@ const InterestingProducts = () => {
 
 export default InterestingProducts
 
-const ProductCard = ({ photo, name, description }) => (
-  <article className={st.productCard}>
-    <div className={st.productPhoto}>
-      <Image fill src={photo} alt={`Фотография продукта: ${name}`} />
-    </div>
+const ProductCard = ({ id, photo, name, description }) => {
+  const productInfoRef = useRef(null)
 
-    <div className={st.productText}>
-      <h6 className={st.productName}>{name}</h6>
-      <p className={st.productInfo}>{description}</p>
-      <button className={st.showMore}>Показать</button>
-    </div>
-  </article>
-)
+  useEffect(() => {
+    if (productInfoRef.current) {
+      const callback = entries => {
+        for (let entry of entries) {
+          entry.target.classList[entry.target.scrollHeight > entry.contentRect.height ? 'add' : 'remove'](st.truncated)
+        }
+      }
+
+      const observer = new ResizeObserver(callback)
+
+      observer.observe(productInfoRef.current)
+
+      return () => {
+        observer.disconnect()
+      }
+    }
+  }, [])
+
+  return (
+    <article className={st.productCard}>
+      <div className={st.productPhoto}>
+        <Image fill src={photo} alt={`Фотография продукта: ${name}`} />
+      </div>
+
+      <div className={st.productText}>
+        <h6 className={st.productName}>{name}</h6>
+        <input type='checkbox' id={`${id}-expanded`} />
+        <p ref={productInfoRef} className={st.productInfo}>
+          {description}
+        </p>
+        <label htmlFor={`${id}-expanded`} role='button' className={st.readMore}>
+          Показать
+        </label>
+      </div>
+    </article>
+  )
+}

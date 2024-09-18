@@ -1,0 +1,38 @@
+.radioList {
+  display: flex;
+  list-style: none;
+  list-style-position: inside;
+  gap: 44px;
+}
+
+.radio {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  gap: 10px;
+}
+
+.radioInput {
+  display: none;
+
+  & ~ label {
+    display: block;
+    width: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    background: var(--white-main);
+  }
+
+  &:checked ~ label {
+    border-color: var(--white-main);
+    background: var(--blue-primary);
+  }
+}
+
+.radioTitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+}

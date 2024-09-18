@@ -11,6 +11,10 @@ const PHONE = '+375 29 318-82-12'
 const Team = () => {
   const { openModal } = useModal()
 
+  const onLeaveSimpleReqBtnClick = () => {
+    openModal('simpleRequest')
+  }
+
   return (
     <section className={st.container}>
       <h2 className={st.title}>Команда</h2>
@@ -28,7 +32,7 @@ const Team = () => {
           <p>Понедельник - пятница</p>
           <p className={st.workingHours}>с 08:00 до 22:00</p>
 
-          <Button variant='secondary' onClick={openModal}>
+          <Button variant='secondary' onClick={onLeaveSimpleReqBtnClick}>
             Оставить заявку
           </Button>
         </div>
