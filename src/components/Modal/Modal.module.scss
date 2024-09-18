@@ -40,7 +40,7 @@
 }
 
 .container {
-  width: clamp(800px, 68%, 1050px);
+  // width: clamp(800px, 68%, 1050px);
   background-color: var(--layout-bg-color);
   border-radius: 20px;
   max-height: calc(100vh - 60px);
@@ -48,9 +48,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px;
+  // padding: 50px;
   position: relative;
-  min-height: 420px;
+  // min-height: 420px;
   overflow-y: auto;
 }
 
