@@ -1,3 +1,5 @@
+@use '../../../app/variables.scss';
+
 .container {
   padding: 25px 20px 10px 82px;
   overflow-y: auto;
@@ -5,35 +7,11 @@
   margin: 30px 0;
   margin-right: 82px;
 
-  &::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
-    cursor: pointer;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-    width: 3px;
-    height: 3px;
-
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    width: 4px;
-    height: 4px;
-    cursor: pointer;
-  }
+  @extend %with-transparent-scroll;
 }
 
 .container:hover {
-  &::-webkit-scrollbar-track {
-    background-color: var(--gray-main-50);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--gray-main);
-  }
+  @extend %with-custom-scroll;
 }
 
 .title {
