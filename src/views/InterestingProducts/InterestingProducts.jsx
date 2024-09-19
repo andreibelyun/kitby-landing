@@ -13,7 +13,7 @@ const InterestingProducts = () => {
 
       <div className={st.products}>
         {PRODUCTS.map(item => (
-          <ProductCard key={item.name} {...item} />
+          <ProductCard key={item.id} {...item} />
         ))}
       </div>
 
