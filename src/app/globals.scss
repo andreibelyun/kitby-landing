@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 1400px) {
   :root {
-    --page-x-padding: 140px;
+    --page-x-padding: 120px;
   }
 }
 
@@ -117,6 +117,13 @@ main {
   inset: 0;
   z-index: -1;
   background: url(../assets/backgrounds/main-bg.png) 0 0 repeat;
+
+  @media screen and (max-width: 780px) {
+    & {
+      background: none;
+      position: relative;
+    }
+  }
 }
 
 .disabled-scroll {

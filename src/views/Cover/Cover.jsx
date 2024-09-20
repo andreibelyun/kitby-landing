@@ -11,13 +11,13 @@ const Cover = () => {
       <div className={st.decoration} />
       <div className={st.content}>
         <h1 className={st.title}>
-          Найдем, купим,
+          {'Найдем, купим, '}
           <br />
-          доставим, растаможим,
+          доставим,&nbsp;растаможим,
           <br />
-          сертифицируем в Беларусь,
+          {' сертифицируем в Беларусь, '}
           <br />
-          Россию и страны Европы&nbsp;
+          {'Россию и страны Европы '}
           <br />
           <span className={st.titleHighlight}>
             любые товары из Китая&nbsp;
@@ -42,7 +42,7 @@ const Cover = () => {
           </li>
         </ul>
 
-        <ButtonsGroup />
+        <ButtonsGroup className={st.buttons} />
       </div>
     </section>
   )
