@@ -3,11 +3,15 @@ import clsx from 'clsx'
 import Carousel from '@/components/Carousel/Carousel'
 import { SERVICES_LIST } from './servicesList'
 import ButtonsGroup from '@/components/ButtonsGroup/ButtonsGroup'
+import ChFlag from '@/components/ChFlag/ChFlag'
 
 const ADDITIONAL = [
   'Проверка качества товара в Китае.',
   'Услуги по упаковке и маркировке.',
-  'Организация поездок в Китай 🇨🇳',
+  <>
+    Организация поездок в Китай&nbsp;
+    <ChFlag />
+  </>,
   'Изготовление товара по индивидуальному заказу клиента.'
 ]
 

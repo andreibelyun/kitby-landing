@@ -3,6 +3,7 @@
 import st from './Cover.module.scss'
 import IconWhaleTail from '@/assets/svg/IconWhaleTail'
 import ButtonsGroup from '@/components/ButtonsGroup/ButtonsGroup'
+import ChFlag from '@/components/ChFlag/ChFlag'
 
 const Cover = () => {
   return (
@@ -18,7 +19,10 @@ const Cover = () => {
           <br />
           Россию и страны Европы&nbsp;
           <br />
-          <span className={st.titleHighlight}>любые товары из Китая 🇨🇳</span>
+          <span className={st.titleHighlight}>
+            любые товары из Китая&nbsp;
+            <ChFlag />
+          </span>
         </h1>
 
         <p className={st.caption}>Ваша идея – наша реализация!</p>
