@@ -17,6 +17,7 @@ const Services = () => {
       <h2 className={st.title}>Услуги</h2>
 
       <Carousel
+        loop
         withPagination
         id='services-slider'
         slides={SERVICES_LIST.map(info => (

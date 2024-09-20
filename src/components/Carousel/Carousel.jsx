@@ -37,6 +37,7 @@ const PAGINATION = {
 
 const Carousel = ({
   id,
+  loop = false,
   breakpoints = DEFAULT_BREAKPOINTS,
   withNavigation = true,
   withPagination = false,
@@ -53,6 +54,7 @@ const Carousel = ({
   return (
     <div className={`${st.container} ${className}`}>
       <Swiper
+        loop={loop}
         breakpoints={breakpoints}
         modules={[Navigation, Autoplay, Pagination]}
         autoplay={withAutoplay ? { delay: 2000 } : false}
