@@ -1,14 +1,24 @@
 'use client'
 
 import st from './Header.module.scss'
-import Logo from '../Logo/Logo'
-import IconMail from '@/assets/svg/IconMail'
-import Button from '../Button/Button'
-import { CONTACT_EMAIL, PHONE_NUMBER, READABLE_PHONE_NUMBER } from '@/constants/contacts'
+import { useState } from 'react'
 import { useModal } from '@/context/useModal'
+import clsx from 'clsx'
+import Logo from '../Logo/Logo'
+import ChFlag from '../ChFlag/ChFlag'
+import Button from '../Button/Button'
+import Contacts from './Contacts/Contacts'
+import HeaderMenu from './HeaderMenu/HeaderMenu'
+import IconX from '@/assets/svg/IconX'
+import IconMenu from '@/assets/svg/IconMenu'
 
 const Header = () => {
   const { openModal } = useModal()
+  const [isMenuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setMenuOpen(prev => !prev)
+  }
 
   const onLeaveSimpleReqBtnClick = () => {
     openModal('simpleRequest')
@@ -16,32 +26,32 @@ const Header = () => {
 
   return (
     <header className={st.container}>
-      <Logo />
+      <div className={st.headerTop}>
+        <Logo className={st.logo} />
+        <button onClick={toggleMenu} className={clsx(st.menuBtn, { [st.closeBtn]: isMenuOpen })}>
+          {isMenuOpen ? <IconX /> : <IconMenu />}
+        </button>
+      </div>
 
       <h4 className={st.slogan}>
-        ваш надежный партнёр
+        ваш надежный партнёр&nbsp;
         <br />в поставках из Китая&nbsp;
-        <span className={st.flag}>🇨🇳</span>
+        <ChFlag className={st.flag} />
       </h4>
 
-      <div className={st.contacts}>
-        <a href={`mailto:${CONTACT_EMAIL}`} className={st.email}>
-          <IconMail />
-          <span>{CONTACT_EMAIL}</span>
-        </a>
-
-        <a href={`tel:${PHONE_NUMBER}`} className={st.phone}>
-          {READABLE_PHONE_NUMBER}
-        </a>
-      </div>
+      <Contacts withoutPhoneIcon className={st.contacts} />
 
       <Button onClick={onLeaveSimpleReqBtnClick} className={st.btn} size='small' style={{ width: '150px' }}>
         Оставить
         <br />
         заявку
       </Button>
+
+      {isMenuOpen && <HeaderMenu />}
     </header>
   )
 }
 
 export default Header
+
+
