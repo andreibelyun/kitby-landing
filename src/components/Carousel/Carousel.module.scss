@@ -1,25 +1,32 @@
 .container {
   position: relative;
-  // margin-left: -40px;
-  // margin-right: -50px;
 }
 
 .prevBtn,
 .nextBtn {
   height: 100%;
+  width: 150px !important;
   display: flex;
   align-items: center;
   position: absolute;
   top: 0;
   height: calc(100% - 45px);
+  z-index: 10;
 }
 
 .prevBtn {
-  left: 36px;
+  left: -1px;
+  padding-left: 38px;
+  background: linear-gradient(270deg, rgba(0, 57, 99, 0) 0%, #003963 100%),
+    linear-gradient(270deg, rgba(0, 57, 99, 0) 0%, #003963 100%);
+  justify-content: flex-start;
 }
 
 .nextBtn {
-  right: 36px;
+  right: -1px;
+  padding-right: 38px;
+  background: linear-gradient(270deg, #003963 0%, rgba(0, 57, 99, 0) 100%);
+  justify-content: flex-end;
 }
 
 .navBtn {
@@ -42,23 +49,29 @@
 @media screen and (max-width: 960px) {
   .prevBtn,
   .nextBtn {
-    position: inherit;
+    background: none;
+    width: 50px !important;
   }
 
-  .navBtn {
-    width: 32px;
+  .prevBtn {
+    padding-left: 25px;
   }
 
-  .nav {
-    display: flex;
-    justify-content: flex-end;
-    gap: 24px;
-    margin-top: 12px;
+  .nextBtn {
+    padding-right: 25px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .nav {
-    margin-top: 24px;
+  .navBtn svg {
+    width: 14px;
+  }
+
+  .prevBtn {
+    padding-left: clamp(8px, 3%, 50px);
+  }
+
+  .nextBtn {
+    padding-right: clamp(8px, 3%, 50px);
   }
 }
