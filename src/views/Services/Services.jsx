@@ -53,6 +53,7 @@ const Services = () => {
       <Carousel
         loop
         withPagination
+        withSideFilter
         id='services-slider'
         breakpoints={BREAKPOINTS}
         slides={SERVICES_LIST.map(info => (

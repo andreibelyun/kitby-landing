@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay, Pagination } from 'swiper/modules'
 import IconArrowLeft from '@/assets/svg/IconArrowLeft'
 import IconArrowRight from '@/assets/svg/IconArrowRight'
+import clsx from 'clsx'
 
 const DEFAULT_BREAKPOINTS = {
   1400: {
@@ -37,6 +38,8 @@ const PAGINATION = {
 
 const Carousel = ({
   id,
+  isDark = false,
+  withSideFilter = false,
   loop = false,
   breakpoints = DEFAULT_BREAKPOINTS,
   withNavigation = true,
@@ -52,7 +55,7 @@ const Carousel = ({
   }
 
   return (
-    <div className={`${st.container} ${className}`}>
+    <div className={clsx(`${st.container} ${className}`, { dark: isDark, [st.withSideFilter]: withSideFilter })}>
       <Swiper
         loop={loop}
         breakpoints={breakpoints}
@@ -70,8 +73,8 @@ const Carousel = ({
 
       {withNavigation && (
         <div className={st.nav}>
-          <NavigationBtn id={`${id}-prev`} to='prev' />
-          <NavigationBtn id={`${id}-next`} to='next' />
+          <NavigationBtn id={`${id}-prev`} to='prev' isDark={isDark} />
+          <NavigationBtn id={`${id}-next`} to='next' isDark={isDark} />
         </div>
       )}
     </div>
@@ -80,8 +83,8 @@ const Carousel = ({
 
 export default Carousel
 
-const NavigationBtn = ({ id, to, ...props }) => {
-  const cn = `${to === 'prev' ? st.prevBtn : st.nextBtn}`
+const NavigationBtn = ({ id, to, isDark, ...props }) => {
+  const cn = `${to === 'prev' ? st.prevBtn : st.nextBtn} ${isDark ? st.dark : st.light}`
 
   return (
     <div className={cn}>

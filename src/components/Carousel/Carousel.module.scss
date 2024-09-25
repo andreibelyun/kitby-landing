@@ -15,18 +15,28 @@
 }
 
 .prevBtn {
-  left: -1px;
+  left: 0;
   padding-left: 38px;
-  background: linear-gradient(270deg, rgba(0, 57, 99, 0) 0%, #003963 100%),
-    linear-gradient(270deg, rgba(0, 57, 99, 0) 0%, #003963 100%);
   justify-content: flex-start;
 }
 
 .nextBtn {
-  right: -1px;
+  right: 0;
   padding-right: 38px;
-  background: linear-gradient(270deg, #003963 0%, rgba(0, 57, 99, 0) 100%);
   justify-content: flex-end;
+}
+
+.withSideFilter {
+  & .prevBtn {
+    left: -2px;
+    background: linear-gradient(270deg, rgba(0, 57, 99, 0) 0%, #003963 100%),
+      linear-gradient(270deg, rgba(0, 57, 99, 0) 0%, #003963 100%);
+  }
+
+  & .nextBtn {
+    right: -2px;
+    background: linear-gradient(270deg, #003963 0%, rgba(0, 57, 99, 0) 100%);
+  }
 }
 
 .navBtn {
@@ -44,6 +54,12 @@
 
 .navBtn:hover {
   transform: scale(1.1);
+}
+
+.dark {
+  & svg > path {
+    stroke: var(--blue-secondary);
+  }
 }
 
 @media screen and (max-width: 960px) {
