@@ -85,9 +85,11 @@
 
   .prevBtn {
     padding-left: clamp(8px, 3%, 50px);
+    background: none !important;
   }
 
   .nextBtn {
     padding-right: clamp(8px, 3%, 50px);
+    background: none !important;
   }
 }
