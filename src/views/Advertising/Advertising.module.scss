@@ -33,3 +33,131 @@
 .btns {
   margin-top: 36px;
 }
+
+@media screen and (max-width: 1400px) {
+  .content {
+    margin-left: 80px;
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .content {
+    background-size: 45%;
+    margin-left: 80px;
+    margin-right: 20px;
+  }
+
+  .title {
+    font-size: 35px;
+    line-height: 40px;
+    max-width: 440px;
+  }
+
+  .btns {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .content {
+    background-size: 43%;
+    margin-left: 60px;
+    margin-right: 0px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 32px;
+    max-width: 350px;
+  }
+
+  .caption {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 340px;
+  }
+
+  .btns {
+    & > button {
+      padding-top: 18px;
+      padding-bottom: 18px;
+      border-width: 2px;
+      min-width: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .content {
+    background-size: 40%;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  .title {
+    font-size: 26px;
+    line-height: 30px;
+    max-width: 320px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding-top: 32px;
+    padding-bottom: 42px;
+  }
+
+  .content {
+    display: flex;
+    background-size: 260px 240px;
+    background-position: top 0 center;
+    padding: 240px 0 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 12px;
+    max-width: 380px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .caption {
+    font-size: 15px;
+    line-height: 18px;
+    max-width: 380px;
+    text-align: center;
+  }
+
+  .btns {
+    flex-direction: column;
+    margin-top: 36px;
+    align-self: stretch;
+
+    & > button {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content {
+    align-items: flex-start;
+  }
+
+  .title {
+    text-align: left;
+    max-width: 300px;
+    margin-top: 5px;
+  }
+
+  .caption {
+    max-width: 280px;
+    text-align: left;
+  }
+}
