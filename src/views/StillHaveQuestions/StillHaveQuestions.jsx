@@ -14,7 +14,7 @@ const StillHaveQuestions = () => {
       <div className={st.content}>
         <h2 className={st.title}>
           Остались вопросы?
-          <br />С удовольствием ответим на них
+          <br />С удовольствием ответим&nbsp;на&nbsp;них
         </h2>
 
         <form className={st.contactForm} onSubmit={onFormSubmit}>
