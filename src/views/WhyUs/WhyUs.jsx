@@ -118,7 +118,7 @@ const WhyUs = () => {
 
         {!showAll && (
           <Button onClick={() => setShowAll(true)} variant='outlined' className={st.showAllBtn}>
-            Что ещё?
+            Показать еще
           </Button>
         )}
 
