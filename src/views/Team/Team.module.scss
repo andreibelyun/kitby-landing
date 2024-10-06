@@ -37,6 +37,10 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+
+  & button {
+    background-color: var(--blue-secondary);
+  }
 }
 
 .leftInfoPhone {
@@ -55,9 +59,9 @@
 .employeesList {
   flex: 1 1 auto;
   display: grid;
-  grid-template-columns: repeat(3, 208px);
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
   row-gap: 45px;
-  justify-content: space-between;
+  column-gap: 40px;
 }
 
 .employeeCard {
@@ -99,4 +103,110 @@
 
 .employeeContactLink > svg {
   flex-shrink: 0;
+}
+
+.swiper {
+  display: none;
+  margin: 0 calc(-1 * var(--page-x-padding));
+}
+
+@media screen and (max-width: 1080px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .employeesList {
+    display: none;
+  }
+
+  .swiper {
+    display: block;
+    margin-top: 40px;
+  }
+
+  .employeeCard {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 960px) {
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    background: var(--white-main);
+    border-radius: 20px;
+    color: var(--black-main);
+    padding-top: 18px;
+    padding-bottom: 40px;
+
+    & button {
+      padding-top: 18px;
+      padding-bottom: 18px;
+      border-width: 2px;
+      width: 100%;
+      min-width: auto;
+    }
+  }
+
+  .title {
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .leftInfo {
+    padding: 20px 15px;
+    border-radius: 20px;
+    font-size: 15px;
+    line-height: 19px;
+    background-size: 100%;
+  }
+
+  .leftInfoPhone {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  .workingHours {
+    margin-bottom: 14px;
+  }
+
+  .employeePhoto {
+    width: 207px;
+  }
+
+  .employeePosition {
+    margin: 14px 0;
+    max-width: 80%;
+  }
+
+  .employeeContactLink {
+    margin-bottom: 6px;
+  }
+
+  .employeeContactLink > svg {
+    flex-shrink: 0;
+  }
+
+  .navBtn {
+    align-items: flex-start;
+    padding-top: 80px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .leftInfo {
+    width: 100%;
+    min-height: 410px;
+  }
 }

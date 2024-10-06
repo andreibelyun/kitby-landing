@@ -1,21 +1,31 @@
 import st from './InterestingProducts.module.scss'
+import clsx from 'clsx'
 import Image from 'next/image'
+import { useState, useEffect, useRef } from 'react'
 import { PRODUCTS } from './productsList'
 import ButtonsGroup from '@/components/ButtonsGroup/ButtonsGroup'
 import Partners from '../Partners/Partners'
 import Reviews from '../Reviews/Reviews'
-import { useEffect, useRef } from 'react'
+import Button from '@/components/Button/Button'
 
 const InterestingProducts = () => {
+  const [showAll, setShowAll] = useState(false)
+
   return (
-    <section className={st.container}>
-      <h2 className={st.title}>Подборка интересных товаров, приобретенных нашими клиентами</h2>
+    <section id='cases' className={st.container}>
+      <h2 className={st.title}>Подборка интересных&nbsp;товаров, приобретенных нашими клиентами</h2>
 
       <div className={st.products}>
         {PRODUCTS.map(item => (
-          <ProductCard key={item.name} {...item} />
+          <ProductCard key={item.id} {...item} className={clsx({ [st.hiddenCard]: item.isMobHidden && !showAll })} />
         ))}
       </div>
+
+      {!showAll && (
+        <Button onClick={() => setShowAll(true)} variant='outlined' className={st.showAllBtn}>
+          Показать еще
+        </Button>
+      )}
 
       <ButtonsGroup className={st.btns} withoutLeaveFreeEstimateReqBtn />
 
@@ -27,7 +37,7 @@ const InterestingProducts = () => {
 
 export default InterestingProducts
 
-const ProductCard = ({ id, photo, name, description }) => {
+const ProductCard = ({ id, photo, name, description, className }) => {
   const productInfoRef = useRef(null)
 
   useEffect(() => {
@@ -49,7 +59,7 @@ const ProductCard = ({ id, photo, name, description }) => {
   }, [])
 
   return (
-    <article className={st.productCard}>
+    <article className={clsx(st.productCard, className)}>
       <div className={st.productPhoto}>
         <Image fill src={photo} alt={`Фотография продукта: ${name}`} />
       </div>

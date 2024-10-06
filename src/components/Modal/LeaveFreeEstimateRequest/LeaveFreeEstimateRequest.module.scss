@@ -1,5 +1,17 @@
+@use '../../../app/variables.scss';
+
 .container {
-  padding: 65px 102px 60px;
+  padding: 20px 20px 0 102px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 30px 0;
+  margin-right: 82px;
+
+  @extend %with-transparent-scroll;
+}
+
+.container:hover {
+  @extend %with-custom-scroll;
 }
 
 .title {
@@ -13,11 +25,12 @@
 
 .form {
   width: 100%;
-  padding-top: 25px;
+  padding-top: 15px;
   border-top: 1px solid #265c83;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   min-width: 900px;
 }
 
@@ -32,8 +45,8 @@
   grid-template-columns: repeat(2, auto);
   grid-auto-flow: row;
   column-gap: 44px;
-  row-gap: 16px;
-  margin-top: 22px;
+  row-gap: 10px;
+  margin-top: 12px;
 }
 
 .textArea {
@@ -66,21 +79,4 @@
 
 .submitBtn {
   margin-top: 15px;
-}
-
-.successInformer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 90px 50px;
-}
-
-.successText {
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 34px;
-}
-
-.successBtn {
-  margin-top: 50px;
 }

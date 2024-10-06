@@ -5,6 +5,7 @@ import Button from '@/components/Button/Button'
 import Input from '@/components/Input/Input'
 import RadioGroup from '@/components/RadioGroup/RadioGroup'
 import { DropZone } from '@/components/DropZone/DropZone'
+import SuccessInformer from '../SuccessInformer/SuccessInformer'
 
 const DEFAULT_ENTITY = 'legal' // or 'individual'
 const REQUIRED_ERR_TEXT = 'Некоторые обязательные поля не заполнены'
@@ -46,16 +47,7 @@ const LeaveFreeEstimateRequest = ({ closeModal }) => {
     console.log(files)
   }, [files])
 
-  if (isRequestSent)
-    return (
-      <div className={st.successInformer}>
-        <h3 className={st.title}>Ваша заявка отправлена!</h3>
-        <p className={st.successText}>Мы свяжемся с вами в самое ближайшее время</p>
-        <Button size='large' onClick={closeModal} className={st.successBtn}>
-          {'Спасибо! Жду :)'}
-        </Button>
-      </div>
-    )
+  if (isRequestSent) return <SuccessInformer closeModal={closeModal} />
 
   return (
     <div className={st.container}>

@@ -16,7 +16,46 @@
   margin: 75px 0;
 }
 
-.bottomRow {
+.logoBelUvTorg {
   grid-column: span 2;
   justify-self: center;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .logoManka {
+    order: -1;
+  }
+
+  .logoBelUvTorg {
+    grid-column: span 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    row-gap: 50px;
+    padding-top: 42px;
+    padding-bottom: 52px;
+    margin: 60px 0 36px;
+  }
+
+  .logoManka {
+    width: 198px;
+    height: 72px;
+  }
+
+  .logoZvonko {
+    width: 198px;
+    height: 54px;
+  }
+
+  .logoBelUvTorg {
+    width: 248px;
+    height: 32px;
+  }
 }

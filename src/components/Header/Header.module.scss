@@ -7,6 +7,12 @@
   background: var(--layout-bg-color);
 }
 
+.logo {
+  width: 134px;
+  height: auto;
+  aspect-ratio: 134/50;
+}
+
 .slogan {
   text-transform: uppercase;
   font-weight: 700;
@@ -20,18 +26,104 @@
 }
 
 .contacts {
-  display: flex;
-  align-items: center;
-  gap: 33px;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
   margin-left: auto;
   margin-right: 28px;
 }
 
-.contacts > a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.menuBtn {
+  padding: 0;
+  z-index: 6;
+  outline: none;
+  display: none;
+  & > svg {
+    width: 40px;
+    height: auto;
+    aspect-ratio: 40/28;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.closeBtn {
+  position: fixed;
+  top: 30px;
+  right: calc(10% + 20px);
+}
+
+@media screen and (max-width: 1400px) {
+  .btn {
+    display: none;
+  }
+
+  .contacts {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .logo {
+    width: 110px;
+  }
+
+  .slogan {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .slogan {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .headerTop {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .slogan {
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+
+    & > br {
+      display: none;
+    }
+  }
+
+  .contacts {
+    display: none !important;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .closeBtn {
+    top: 15px;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
 }

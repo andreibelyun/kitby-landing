@@ -4,6 +4,7 @@ import { EMPLOYEES } from './employeesList'
 import { useModal } from '@/context/useModal'
 import Button from '@/components/Button/Button'
 import { getClearPhoneNum } from '@/utils/phone'
+import Carousel from '@/components/Carousel/Carousel'
 import { IconInstagram, IconMain, IconPhone, IconTelegram } from './assets/icons'
 
 const PHONE = '+375 29 318-82-12'
@@ -16,7 +17,7 @@ const Team = () => {
   }
 
   return (
-    <section className={st.container}>
+    <section id='team' className={st.container}>
       <h2 className={st.title}>Команда</h2>
 
       <div className={st.content}>
@@ -43,6 +44,20 @@ const Team = () => {
           ))}
         </div>
       </div>
+
+      <Carousel
+        loop
+        isDark
+        withAutoplay
+        withPagination
+        id='services-slider'
+        className={st.swiper}
+        navBtnClassName={st.navBtn}
+        breakpoints={{ 320: { slidesPerView: 1 } }}
+        slides={EMPLOYEES.map(item => (
+          <EmployeeCard key={item.name} {...item} />
+        ))}
+      />
     </section>
   )
 }
