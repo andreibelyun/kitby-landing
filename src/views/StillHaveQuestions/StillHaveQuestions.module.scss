@@ -22,13 +22,6 @@
   margin-bottom: 35px;
 }
 
-.caption {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  max-width: 380px;
-}
-
 .contactForm {
   display: flex;
   gap: 26px;
@@ -42,11 +35,124 @@
   min-width: auto;
   padding: 0;
   width: 222px;
-  height: 60px;
+  height: 62px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
+}
+
+@media screen and (max-width: 1400px) {
+  .content {
+    margin-left: 120px;
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .content {
+    background-size: 20%;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .contactForm {
+    display: flex;
+    gap: 26px;
+  }
+
+  .input {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .content {
+    margin-left: 80px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .content {
+    margin-left: 60px;
+    margin-right: 0;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .input {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .content {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+
+  .title {
+    margin-top: 10px;
+    margin-bottom: 45px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .content {
+    margin: 0;
+  }
+
+  .title {
+    font-size: 25px;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 28px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    padding-top: 44px;
+    padding-bottom: 78px;
+  }
+
+  .content {
+    background-size: 230px 304px;
+    background-position: top 0 center;
+    padding: 304px 0 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .title {
+    margin: 28px 0;
+    text-align: center;
+  }
+
+  .contactForm {
+    flex-direction: column;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contactForm {
+    width: 100%;
+  }
 }

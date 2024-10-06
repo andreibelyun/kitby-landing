@@ -1,4 +1,5 @@
 import st from './Footer.module.scss'
+import clsx from 'clsx'
 import Logo from '../Logo/Logo'
 import IconMail from '@/assets/svg/IconMail'
 import IconPhone from '@/assets/svg/IconPhone'
@@ -24,21 +25,21 @@ const Footer = () => {
     <footer className={st.footer}>
       <Logo />
 
+      <Slogan className={st.topFooterSlogan} />
+
       <div className={st.content}>
         <div className={st.leftInfo}>
-          <h4 className={st.slogan}>
-            <span className={st.companyName}>Kitby.by</span>
-            &nbsp;- надежный партнёр&nbsp;
-            <br />в поставках из Китая
-          </h4>
+          <Slogan className={st.leftInfoSlogan} />
 
-          <p className={st.socialLinksTitle}>Мы в соцсетях</p>
-          <div className={st.socialLinks}>
-            {SOCIAL_LINKS.map(({ href, icon }) => (
-              <a key={href} href={href} className={st.socialLink}>
-                {icon}
-              </a>
-            ))}
+          <div className={st.socialLinksContainer}>
+            <p className={st.socialLinksTitle}>Мы в соцсетях</p>
+            <div className={st.socialLinks}>
+              {SOCIAL_LINKS.map(({ href, icon }) => (
+                <a key={href} href={href} className={st.socialLink}>
+                  {icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -80,3 +81,10 @@ const Footer = () => {
 }
 
 export default Footer
+
+const Slogan = ({ className }) => (
+  <h4 className={clsx(st.slogan, className)}>
+    <span className={st.companyName}>Kitby.by</span> - надежный&nbsp;партнёр
+    <br />в поставках из Китая
+  </h4>
+)

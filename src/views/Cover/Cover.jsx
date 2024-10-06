@@ -3,6 +3,7 @@
 import st from './Cover.module.scss'
 import IconWhaleTail from '@/assets/svg/IconWhaleTail'
 import ButtonsGroup from '@/components/ButtonsGroup/ButtonsGroup'
+import ChFlag from '@/components/ChFlag/ChFlag'
 
 const Cover = () => {
   return (
@@ -10,15 +11,18 @@ const Cover = () => {
       <div className={st.decoration} />
       <div className={st.content}>
         <h1 className={st.title}>
-          Найдем, купим,
+          {'Найдем, купим, '}
           <br />
-          доставим, растаможим,
+          доставим,&nbsp;растаможим,
           <br />
-          сертифицируем в Беларусь,
+          {' сертифицируем в Беларусь, '}
           <br />
-          Россию и страны Европы&nbsp;
+          {'Россию и страны Европы '}
           <br />
-          <span className={st.titleHighlight}>любые товары из Китая 🇨🇳</span>
+          <span className={st.titleHighlight}>
+            любые товары из Китая&nbsp;
+            <ChFlag />
+          </span>
         </h1>
 
         <p className={st.caption}>Ваша идея – наша реализация!</p>
@@ -38,7 +42,7 @@ const Cover = () => {
           </li>
         </ul>
 
-        <ButtonsGroup />
+        <ButtonsGroup className={st.buttons} />
       </div>
     </section>
   )

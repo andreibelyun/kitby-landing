@@ -1,5 +1,17 @@
+@use '../../../app/variables.scss';
+
 .container {
-  padding: 65px 82px 60px;
+  padding: 25px 20px 10px 82px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 30px 0;
+  margin-right: 82px;
+
+  @extend %with-transparent-scroll;
+}
+
+.container:hover {
+  @extend %with-custom-scroll;
 }
 
 .title {
@@ -59,21 +71,4 @@
 
 .submitBtn {
   margin-top: 35px;
-}
-
-.successInformer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 90px 50px;
-}
-
-.successText {
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 34px;
-}
-
-.successBtn {
-  margin-top: 50px;
 }

@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay, Pagination } from 'swiper/modules'
 import IconArrowLeft from '@/assets/svg/IconArrowLeft'
 import IconArrowRight from '@/assets/svg/IconArrowRight'
+import clsx from 'clsx'
 
 const DEFAULT_BREAKPOINTS = {
   1400: {
@@ -37,12 +38,16 @@ const PAGINATION = {
 
 const Carousel = ({
   id,
+  isDark = false,
+  withSideFilter = false,
+  loop = false,
   breakpoints = DEFAULT_BREAKPOINTS,
   withNavigation = true,
   withPagination = false,
-  withAutoplay = true,
+  withAutoplay = false,
   slides,
   className = '',
+  navBtnClassName = '',
   ...props
 }) => {
   const navigationProps = {
@@ -51,11 +56,12 @@ const Carousel = ({
   }
 
   return (
-    <div className={`${st.container} ${className}`}>
+    <div className={clsx(`${st.container} ${className}`, { dark: isDark, [st.withSideFilter]: withSideFilter })}>
       <Swiper
+        loop={loop}
         breakpoints={breakpoints}
         modules={[Navigation, Autoplay, Pagination]}
-        autoplay={withAutoplay ? { delay: 2000 } : false}
+        autoplay={withAutoplay ? { delay: 3000 } : false}
         pagination={withPagination ? PAGINATION : false}
         navigation={withNavigation ? navigationProps : false}
         style={{ paddingBottom: withPagination ? '45px' : '0' }}
@@ -68,8 +74,8 @@ const Carousel = ({
 
       {withNavigation && (
         <div className={st.nav}>
-          <NavigationBtn id={`${id}-prev`} to='prev' />
-          <NavigationBtn id={`${id}-next`} to='next' />
+          <NavigationBtn id={`${id}-prev`} to='prev' isDark={isDark} className={navBtnClassName} />
+          <NavigationBtn id={`${id}-next`} to='next' isDark={isDark} className={navBtnClassName} />
         </div>
       )}
     </div>
@@ -78,8 +84,8 @@ const Carousel = ({
 
 export default Carousel
 
-const NavigationBtn = ({ id, to, ...props }) => {
-  const cn = `${to === 'prev' ? st.prevBtn : st.nextBtn}`
+const NavigationBtn = ({ id, to, isDark, className, ...props }) => {
+  const cn = `${to === 'prev' ? st.prevBtn : st.nextBtn} ${isDark ? st.dark : st.light} ${className}`
 
   return (
     <div className={cn}>
