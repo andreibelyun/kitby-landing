@@ -52,6 +52,7 @@ const Services = () => {
 
       <Carousel
         loop
+        withAutoplay
         withPagination
         withSideFilter
         id='services-slider'

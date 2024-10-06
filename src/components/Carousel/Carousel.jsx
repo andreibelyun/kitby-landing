@@ -44,9 +44,10 @@ const Carousel = ({
   breakpoints = DEFAULT_BREAKPOINTS,
   withNavigation = true,
   withPagination = false,
-  withAutoplay = true,
+  withAutoplay = false,
   slides,
   className = '',
+  navBtnClassName = '',
   ...props
 }) => {
   const navigationProps = {
@@ -73,8 +74,8 @@ const Carousel = ({
 
       {withNavigation && (
         <div className={st.nav}>
-          <NavigationBtn id={`${id}-prev`} to='prev' isDark={isDark} />
-          <NavigationBtn id={`${id}-next`} to='next' isDark={isDark} />
+          <NavigationBtn id={`${id}-prev`} to='prev' isDark={isDark} className={navBtnClassName} />
+          <NavigationBtn id={`${id}-next`} to='next' isDark={isDark} className={navBtnClassName} />
         </div>
       )}
     </div>
@@ -83,8 +84,8 @@ const Carousel = ({
 
 export default Carousel
 
-const NavigationBtn = ({ id, to, isDark, ...props }) => {
-  const cn = `${to === 'prev' ? st.prevBtn : st.nextBtn} ${isDark ? st.dark : st.light}`
+const NavigationBtn = ({ id, to, isDark, className, ...props }) => {
+  const cn = `${to === 'prev' ? st.prevBtn : st.nextBtn} ${isDark ? st.dark : st.light} ${className}`
 
   return (
     <div className={cn}>

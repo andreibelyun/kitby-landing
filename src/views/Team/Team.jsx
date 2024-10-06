@@ -46,11 +46,13 @@ const Team = () => {
       </div>
 
       <Carousel
-        isDark
         loop
+        isDark
+        withAutoplay
         withPagination
         id='services-slider'
         className={st.swiper}
+        navBtnClassName={st.navBtn}
         breakpoints={{ 320: { slidesPerView: 1 } }}
         slides={EMPLOYEES.map(item => (
           <EmployeeCard key={item.name} {...item} />
