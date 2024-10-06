@@ -47,11 +47,15 @@ const Header = () => {
         заявку
       </Button>
 
-      {isMenuOpen && <HeaderMenu />}
+      {isMenuOpen && (
+        <HeaderMenu
+          closeMenu={() => {
+            setMenuOpen(false)
+          }}
+        />
+      )}
     </header>
   )
 }
 
 export default Header
-
-

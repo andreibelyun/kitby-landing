@@ -1,11 +1,11 @@
-import Logo from '@/components/Logo/Logo'
 import st from './HeaderMenu.module.scss'
 import Link from 'next/link'
+import Logo from '@/components/Logo/Logo'
 import Contacts from '../Contacts/Contacts'
 
 const navigationItems = [
   {
-    title: 'О нас',
+    title: 'Почему kitby.by?',
     href: '#whyus'
   },
   {
@@ -17,12 +17,20 @@ const navigationItems = [
     href: '#team'
   },
   {
+    title: 'Наши кейсы',
+    href: '#cases'
+  },
+  {
     title: 'Отзывы',
     href: '#reviews'
   }
 ]
 
-const HeaderMenu = () => {
+const HeaderMenu = ({ closeMenu }) => {
+  const onNavItemClick = () => {
+    closeMenu()
+  }
+
   return (
     <div className={st.menu}>
       <div className={st.menuContent}>
@@ -31,7 +39,7 @@ const HeaderMenu = () => {
         </div>
         <div className={st.menuNav}>
           {navigationItems.map(({ title, href }) => (
-            <Link key={href} href={href} onClick={() => setMenuOpen(false)} className={st.navLink}>
+            <Link key={href} href={href} onClick={onNavItemClick} className={st.navLink}>
               {title}
             </Link>
           ))}

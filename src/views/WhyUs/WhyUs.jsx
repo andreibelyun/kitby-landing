@@ -95,7 +95,7 @@ const WhyUs = () => {
   const [showAll, setShowAll] = useState(false)
 
   return (
-    <section className={st.container}>
+    <section id='whyus' className={st.container}>
       <h2 className={st.title}>Почему KITBY.by? </h2>
       <p className={st.caption}>
         <span className={st.highlight}>МИССИЯ</span>&nbsp;– закрываем ваши потребности в поиске, приобретении и доставке

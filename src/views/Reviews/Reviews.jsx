@@ -12,7 +12,7 @@ const BREAKPOINTS = {
 
 const Reviews = () => {
   return (
-    <div className={st.container}>
+    <div id='reviews' className={st.container}>
       <h2 className={st.title}>Отзывы</h2>
 
       <div className={st.reviews}>

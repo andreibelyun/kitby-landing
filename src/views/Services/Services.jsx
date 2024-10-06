@@ -47,7 +47,7 @@ const BREAKPOINTS = {
 
 const Services = () => {
   return (
-    <section className={st.container}>
+    <section id='services' className={st.container}>
       <h2 className={st.title}>Услуги</h2>
 
       <Carousel

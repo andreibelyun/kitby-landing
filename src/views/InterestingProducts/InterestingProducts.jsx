@@ -12,7 +12,7 @@ const InterestingProducts = () => {
   const [showAll, setShowAll] = useState(false)
 
   return (
-    <section className={st.container}>
+    <section id='cases' className={st.container}>
       <h2 className={st.title}>Подборка интересных&nbsp;товаров, приобретенных нашими клиентами</h2>
 
       <div className={st.products}>
