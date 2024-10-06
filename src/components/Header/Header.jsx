@@ -1,6 +1,7 @@
 'use client'
 
 import st from './Header.module.scss'
+import Link from 'next/link'
 import { useState } from 'react'
 import { useModal } from '@/context/useModal'
 import clsx from 'clsx'
@@ -27,7 +28,9 @@ const Header = () => {
   return (
     <header className={st.container}>
       <div className={st.headerTop}>
-        <Logo className={st.logo} />
+        <Link href='/'>
+          <Logo className={st.logo} />
+        </Link>
         <button onClick={toggleMenu} className={clsx(st.menuBtn, { [st.closeBtn]: isMenuOpen })}>
           {isMenuOpen ? <IconX /> : <IconMenu />}
         </button>
