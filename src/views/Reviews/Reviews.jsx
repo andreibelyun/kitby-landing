@@ -1,16 +1,38 @@
 import st from './Reviews.module.scss'
 import Image from 'next/image'
 import { REVIEWS } from './reviewsList'
+import Carousel from '@/components/Carousel/Carousel'
+
+const BREAKPOINTS = {
+  320: {
+    slidesPerView: 1,
+    spaceBetween: 20
+  }
+}
 
 const Reviews = () => {
   return (
     <div className={st.container}>
       <h2 className={st.title}>Отзывы</h2>
+
       <div className={st.reviews}>
         {REVIEWS.map(item => (
           <ReviewCard key={item.id} {...item} />
         ))}
       </div>
+
+      <Carousel
+        loop
+        isDark
+        withPagination
+        id='reviews-slider'
+        className={st.swiper}
+        breakpoints={BREAKPOINTS}
+        navBtnClassName={st.navBtn}
+        slides={REVIEWS.map(item => (
+          <ReviewCard key={item.id} {...item} />
+        ))}
+      />
     </div>
   )
 }
