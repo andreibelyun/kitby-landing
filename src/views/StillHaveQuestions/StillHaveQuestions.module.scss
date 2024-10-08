@@ -12,7 +12,7 @@
   background-position: top 0 right 0;
   margin-left: 126px;
   margin-right: 96px;
-  padding: 68px 0 46px;
+  padding: 68px 0 20px;
 }
 
 .title {
@@ -42,6 +42,16 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
+}
+
+.error {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: left;
+  margin-top: 4px;
+  color: var(--error);
+  align-self: flex-start;
 }
 
 @media screen and (max-width: 1400px) {
@@ -117,6 +127,11 @@
     margin-top: 20px;
     margin-bottom: 28px;
   }
+
+  .error {
+    font-size: 15px;
+    line-height: 18px;
+  }
 }
 
 @media screen and (max-width: 620px) {
@@ -140,6 +155,7 @@
 
   .contactForm {
     flex-direction: column;
+    gap: 8px;
   }
 
   .input {

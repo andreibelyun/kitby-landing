@@ -47,16 +47,12 @@
   margin-top: 22px;
 }
 
+.textArea > textarea::placeholder {
+  margin-right: 180px;
+}
+
 .textArea {
   grid-column: span 2;
-}
-
-.textArea > textarea {
-  resize: none;
-}
-
-.textArea > textarea::placeholder {
-  resize: none;
 }
 
 .error {
@@ -71,4 +67,100 @@
 
 .submitBtn {
   margin-top: 35px;
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    padding: 20px 45px 10px 60px;
+    margin: 20px 0;
+    margin-right: 15px;
+  }
+
+  .title {
+    font-size: 38px;
+    line-height: 42px;
+    margin-bottom: 15px;
+  }
+
+  .form {
+    padding-top: 20px;
+  }
+
+  .inputs {
+    row-gap: 15px;
+    column-gap: 20px;
+    margin-top: 20px;
+
+    & input {
+      height: 52px;
+      padding: 10px 20px;
+    }
+  }
+
+  .textArea > textarea::placeholder {
+    margin-right: 20px;
+  }
+
+  .error {
+    padding-bottom: 15px;
+  }
+
+  .submitBtn {
+    margin-top: auto;
+    padding: 18px 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 0;
+    margin: 30px;
+    margin-right: 10px;
+    padding-right: 20px;
+  }
+
+  .inputs {
+    grid-template-columns: repeat(2, 330px);
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    margin: 0;
+    padding: 15px 20px;
+    overflow: visible;
+    position: absolute;
+    inset: 0;
+    padding-top: 50px;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    max-width: 200px;
+    margin: 22px auto;
+  }
+
+  .inputs {
+    row-gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .error {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .submitBtn {
+    margin-top: 20px;
+    width: 100%;
+    min-width: auto;
+    padding: 18px 0;
+    line-height: 30px;
+    margin-bottom: 48px;
+    font-size: 22px;
+  }
 }
