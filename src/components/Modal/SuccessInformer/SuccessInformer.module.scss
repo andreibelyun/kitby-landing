@@ -23,3 +23,57 @@
 .successBtn {
   margin-top: 50px;
 }
+
+@media screen and (max-width: 900px) {
+  .title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .successText {
+    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 40px;
+  }
+  
+  .successBtn {
+    width: 100%;
+    min-width: auto;
+    padding: 18px 0;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: auto;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .successInformer {
+    overflow: visible;
+    position: absolute;
+    inset: 0;
+    padding: 82px 20px 0;
+  }
+
+  .title {
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-top: 1px solid #265c83;
+    padding: 90px 10px 0;
+  }
+
+  .successText {
+    font-size: 16px;
+    line-height: 20px;
+    padding-bottom: 30px;
+    width: 90%;
+  }
+
+  .successBtn {
+    margin-bottom: 48px;
+  }
+}

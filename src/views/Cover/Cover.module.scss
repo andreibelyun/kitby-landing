@@ -162,9 +162,14 @@
   .benefit {
     font-size: 10px;
     line-height: 12px;
+  }
+
+  .benefit > span {
+    margin-right: 6px;
 
     & svg {
-      display: none;
+      width: 10px;
+      height: 13px;
     }
   }
 }

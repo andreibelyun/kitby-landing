@@ -2,6 +2,7 @@ import st from './DropZone.module.scss'
 import { useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import clsx from 'clsx'
+import IconImport from '@/assets/svg/IconImport'
 
 export function DropZone({ files, setFiles, className }) {
   const [warning, setWarning] = useState(null)
@@ -46,6 +47,7 @@ export function DropZone({ files, setFiles, className }) {
 
   return (
     <div className={clsx(st.container, className)} {...getRootProps()}>
+      <IconImport className={st.iconImport} />
       <p className={st.title}>Нажмите, чтобы добавить файлы к сообщению.</p>
       <p className={st.caption}>Можно добавить до 5 файлов с разрешением jpeg, png и весом до 512 Кбайт.</p>
       <input {...getInputProps()} value={files} />

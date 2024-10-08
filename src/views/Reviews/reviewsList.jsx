@@ -1,7 +1,10 @@
+import review1 from './assets/review1.jpg'
+import review2 from './assets/review2.jpg'
+
 export const REVIEWS = [
   {
     id: 'review1',
-    photo: '',
+    photo: review1.src,
     author: {
       name: 'Марина Блюдник',
       job: 'Индивидуальный предприниматель'
@@ -30,7 +33,7 @@ export const REVIEWS = [
   },
   {
     id: 'review2',
-    photo: '',
+    photo: review2.src,
     author: {
       name: 'Вероника Светлова',
       job: 'Индивидуальный предприниматель'

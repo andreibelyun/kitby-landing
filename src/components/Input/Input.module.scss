@@ -25,9 +25,27 @@
 .input::placeholder {
   color: var(--gray-main);
   font-weight: 300;
-  // color: #0000004d;
 }
 
 .error {
   border-color: var(--error);
+}
+
+
+@media screen and (max-width: 600px) {
+  .inputContainer {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .input {
+    font-size: 20px;
+    line-height: 26px;
+    padding: 10px 15px;
+  }
+
+  .input::placeholder {
+    font-size: 18px;
+    line-height: 21px;
+  }
 }
