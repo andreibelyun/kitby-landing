@@ -93,11 +93,11 @@ const LeaveSimpleRequest = ({ closeModal }) => {
 
           <Input
             rows={4}
-            placeholder=''
             type='textarea'
             id='product-info'
             className={st.textArea}
             isError={errors.productInfo}
+            placeholder='Укажите, пожалуйста, важные характеристики и параметры (количество, желаемая цена, дополнительная информация)'
             labelText='Товар, который вас интересует'
             {...register('productInfo')}
           />

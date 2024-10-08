@@ -7,6 +7,8 @@ import { disableScroll, enableScroll } from '@/utils/scroll'
 import { useKeyboardEvent } from '@/hooks/useKeyboardEvent'
 import LeaveSimpleRequest from './LeaveSimpleRequest/LeaveSimpleRequest'
 import LeaveFreeEstimateRequest from './LeaveFreeEstimateRequest/LeaveFreeEstimateRequest'
+import Logo from '../Logo/Logo'
+import IconX from '@/assets/svg/IconX'
 
 const Modal = () => {
   const modalRef = useRef(null)
@@ -57,11 +59,10 @@ const Modal = () => {
       <div className={st.container}>
         {modalContentByType[type]}
 
+        <Logo width={100} height={38} className={st.logo} />
+
         <button onClick={onModalClose} className={st.xBtn} aria-label='Закрыть окно'>
-          <svg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'>
-            <path d='M20.2446 20.5022L59.5062 59.7638' stroke='#466881' strokeWidth='2' strokeLinecap='round' />
-            <path d='M59.5063 20.5022L20.2447 59.7638' stroke='#466881' strokeWidth='2' strokeLinecap='round' />
-          </svg>
+          <IconX />
         </button>
       </div>
     </div>

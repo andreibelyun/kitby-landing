@@ -87,6 +87,7 @@
 
 @media screen and (max-height: 550px) {
   .menuContent {
+    overflow-y: auto;
     & > .contacts {
       display: none;
     }
