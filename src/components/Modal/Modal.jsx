@@ -9,6 +9,7 @@ import LeaveSimpleRequest from './LeaveSimpleRequest/LeaveSimpleRequest'
 import LeaveFreeEstimateRequest from './LeaveFreeEstimateRequest/LeaveFreeEstimateRequest'
 import Logo from '../Logo/Logo'
 import IconX from '@/assets/svg/IconX'
+import SuccessInformer from './SuccessInformer/SuccessInformer'
 
 const Modal = () => {
   const modalRef = useRef(null)
@@ -34,7 +35,8 @@ const Modal = () => {
 
   const modalContentByType = {
     simpleRequest: <LeaveSimpleRequest closeModal={onModalClose} />,
-    freeEstimateRequest: <LeaveFreeEstimateRequest closeModal={onModalClose} />
+    freeEstimateRequest: <LeaveFreeEstimateRequest closeModal={onModalClose} />,
+    successRequest: <SuccessInformer closeModal={onModalClose} />
   }
 
   useKeyboardEvent('Escape', () => {
